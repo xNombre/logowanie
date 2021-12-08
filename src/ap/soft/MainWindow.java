@@ -61,7 +61,8 @@ public class MainWindow extends JFrame {
                     newY = randGen.nextInt(contentPane.getSize().height - badbuttonSizeY - 4);
                 } while (Math.abs(newX - badbutton.getX()) < 30 || Math.abs(newY - badbutton.getY()) < 30);
 
-                badbutton.setBounds(newX, newY, badbuttonSizeX, badbuttonSizeY);
+                badbutton.setLocation(newX, newY);
+                contentPane.setBackground(getBackground()); // hacky way to restore default background color
             }
         });
         badbutton.setText("Click me (:");
