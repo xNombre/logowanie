@@ -30,7 +30,7 @@ public class MainWindow extends JFrame {
     final int panelSizeY = 400;
 
     public MainWindow() throws HeadlessException {
-        super("Bad button");
+        super("Bad button & shapes");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -72,5 +72,10 @@ public class MainWindow extends JFrame {
             }
         });
         contentPane.add(badbutton);
+
+        Kanwa kanwa = new Kanwa();
+        contentPane.addMouseMotionListener(kanwa);
+        kanwa.setBounds(0, 0, panelSizeX, panelSizeY);
+        contentPane.add(kanwa);
     }
 }
