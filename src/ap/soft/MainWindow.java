@@ -86,6 +86,7 @@ public class MainWindow extends JFrame {
         Kanwa kanwa = new Kanwa();
         contentPane.addMouseMotionListener(kanwa);
         kanwa.setBounds(0, 0, panelSizeX, panelSizeY);
+        kanwa.setOpaque(false);
         contentPane.add(kanwa);
     }
 }
