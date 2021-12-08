@@ -42,9 +42,9 @@ public class MainWindow extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JButton badbutton = new JButton();
-        badbutton.setBounds(15, 15, badbuttonSizeX, badbuttonSizeY);
-        badbutton.addMouseListener(new MouseAdapter() {
+        JButton badButton = new JButton();
+        badButton.setBounds(15, 15, badbuttonSizeX, badbuttonSizeY);
+        badButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
@@ -59,26 +59,26 @@ public class MainWindow extends JFrame {
                 do {
                     newX = randGen.nextInt(panelSizeX - badbuttonSizeX - 4);
                     newY = randGen.nextInt(contentPane.getSize().height - badbuttonSizeY - 4);
-                } while (Math.abs(newX - badbutton.getX()) < 30 || Math.abs(newY - badbutton.getY()) < 30);
+                } while (Math.abs(newX - badButton.getX()) < 30 || Math.abs(newY - badButton.getY()) < 30);
 
-                badbutton.setLocation(newX, newY);
+                badButton.setLocation(newX, newY);
                 contentPane.setBackground(getBackground()); // hacky way to restore default background color
             }
         });
-        badbutton.setText("Click me (:");
-        badbutton.addActionListener(new ActionListener() {
+        badButton.setText("Click me (:");
+        badButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 contentPane.setBackground(new Color(0, 100, 0));
             }
         });
-        contentPane.add(badbutton);
+        contentPane.add(badButton);
 
         JButton resetButton = new JButton();
         resetButton.setBounds(15 + badbuttonSizeX + 10, 15, badbuttonSizeX, badbuttonSizeY);
         resetButton.setText("Reset pos");
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                badbutton.setLocation(15, 15);
+                badButton.setLocation(15, 15);
             }
         });
         contentPane.add(resetButton);
