@@ -73,6 +73,16 @@ public class MainWindow extends JFrame {
         });
         contentPane.add(badbutton);
 
+        JButton resetButton = new JButton();
+        resetButton.setBounds(15 + badbuttonSizeX + 10, 15, badbuttonSizeX, badbuttonSizeY);
+        resetButton.setText("Reset pos");
+        resetButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                badbutton.setLocation(15, 15);
+            }
+        });
+        contentPane.add(resetButton);
+
         Kanwa kanwa = new Kanwa();
         contentPane.addMouseMotionListener(kanwa);
         kanwa.setBounds(0, 0, panelSizeX, panelSizeY);
