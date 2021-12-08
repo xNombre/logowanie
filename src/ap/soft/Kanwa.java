@@ -35,6 +35,8 @@ public class Kanwa extends JPanel implements KeyListener, MouseMotionListener {
             shapes.add(new Square(mousePosition));
         } else if (key == 'o') {
             shapes.add(new Oval(mousePosition));
+        } else if (key == 'c') {
+            shapes.clear();
         }
 
         // Repaint whole window so badbutton is included and doesn't
