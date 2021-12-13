@@ -79,6 +79,7 @@ public class MainWindow extends JFrame {
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 badButton.setLocation(15, 15);
+                contentPane.setBackground(getBackground());
             }
         });
         contentPane.add(resetButton);
