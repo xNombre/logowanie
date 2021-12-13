@@ -7,7 +7,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.awt.*;
 
-public class Kanwa extends JPanel implements KeyListener, MouseMotionListener {
+public class Kanwa extends JPanel implements KeyListener, MouseMotionListener, FocusListener {
     ArrayList<Shape> shapes = new ArrayList<Shape>();
     Point mousePosition = new Point(0, 0);
 
@@ -15,6 +15,7 @@ public class Kanwa extends JPanel implements KeyListener, MouseMotionListener {
         setFocusable(true);
         requestFocus();
         addKeyListener(this);
+        addFocusListener(this);
         addMouseMotionListener(this);
     }
 
@@ -59,5 +60,14 @@ public class Kanwa extends JPanel implements KeyListener, MouseMotionListener {
     @Override
     public void mouseMoved(MouseEvent e) {
         mousePosition = e.getPoint();
+    }
+
+    @Override
+    public void focusGained(FocusEvent e) {
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+        requestFocus();
     }
 }
